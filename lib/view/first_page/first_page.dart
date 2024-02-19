@@ -15,7 +15,7 @@ class First extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/guitar/gtr_green.jpg"),
+              image: AssetImage("assets/guitar/gtr_fog.jpg"),
               fit: BoxFit.cover),
         ),
         child: Column(
@@ -35,7 +35,6 @@ class First extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.amber[700],
-                  border: Border.all(width: 2, color: Colors.white),
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Padding(
@@ -65,7 +64,6 @@ class First extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.amber[700],
-                  border: Border.all(width: 2, color: Colors.white),
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Padding(

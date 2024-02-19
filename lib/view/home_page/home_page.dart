@@ -20,6 +20,7 @@ class HomePage extends StatelessWidget {
         actions: [
           CircleAvatar(
             radius: 20,
+            backgroundImage: AssetImage("assets/guitar/keanu.jpg"),
             backgroundColor: Colors.grey,
           ),
           SizedBox(
@@ -47,7 +48,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     "Main Account",
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600, color: Colors.purple[800]),
                   ),
                   Icon(Icons.keyboard_arrow_down)
                 ],
@@ -56,7 +58,7 @@ class HomePage extends StatelessWidget {
                 height: 5,
               ),
               Text(
-                "13.458",
+                "13.458 \$",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -64,9 +66,14 @@ class HomePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.remove_red_eye,
-                    size: 15,
+                  Container(
+                    width: 16,
+                    height: 18,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: AssetImage("assets/guitar/c-eye.png"),
+                      fit: BoxFit.cover,
+                    )),
                   ),
                   SizedBox(
                     width: 5,
@@ -80,49 +87,57 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 35,
-                    height: 35,
-                    decoration: BoxDecoration(
-                        color: Colors.purple[300],
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Icon(
-                      Icons.add,
-                      size: 20,
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Colors.purple[200],
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Icon(
+                          Icons.add,
+                          size: 20,
+                        ),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Container(
-                    width: 35,
-                    height: 35,
-                    decoration: BoxDecoration(
-                        color: Colors.purple[300],
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Icon(
-                      Icons.arrow_right_alt_rounded,
-                      size: 20,
+                    SizedBox(
+                      width: 7,
                     ),
-                  ),
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Container(
-                      width: 385,
-                      height: 35,
-                      decoration: BoxDecoration(
-                          color: Colors.purple[100],
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Center(
-                          child: Text(
-                        "Split a purchase",
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ))),
-                ],
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Colors.purple[200],
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Icon(
+                          Icons.arrow_right_alt_rounded,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 7,
+                    ),
+                    Expanded(
+                      flex: 7,
+                      child: Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.pink[50],
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Center(
+                              child: Text(
+                            "Split a purchase",
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ))),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -131,6 +146,9 @@ class HomePage extends StatelessWidget {
                 "Recent events",
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
               ),
+              SizedBox(
+                height: 15,
+              ),
               Padding(
                 padding: const EdgeInsets.only(right: 17),
                 child: Container(
@@ -139,10 +157,25 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: ListTile(
-                    leading: Image.asset("assets/guitar/gtr_green.jpg"),
-                    title: Text("NIKE SHOP"),
+                    leading: Container(
+                      width: 45,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          image: DecorationImage(
+                              image: AssetImage("assets/guitar/nike.jpg"),
+                              fit: BoxFit.contain),
+                          borderRadius: BorderRadius.circular(4)),
+                    ),
+                    title: Text(
+                      "NIKE SHOP",
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
                     subtitle: Text("17 oct"),
-                    trailing: Text("-62,94"),
+                    trailing: Text(
+                      "-62,94 \$",
+                      style: TextStyle(fontSize: 15),
+                    ),
                   ),
                 ),
               ),
@@ -157,10 +190,24 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: ListTile(
-                    leading: Image.asset("assets/guitar/gtr_green.jpg"),
-                    title: Text("STARBUCKS"),
+                    leading: Container(
+                      width: 45,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/guitar/starb.png"),
+                              fit: BoxFit.fitWidth),
+                          borderRadius: BorderRadius.circular(4)),
+                    ),
+                    title: Text(
+                      "STARBUCKS",
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
                     subtitle: Text("17 oct"),
-                    trailing: Text("-6,00"),
+                    trailing: Text(
+                      "-6,00 \$",
+                      style: TextStyle(fontSize: 15),
+                    ),
                   ),
                 ),
               ),
@@ -175,20 +222,34 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: ListTile(
-                    leading: Image.asset("assets/guitar/gtr_green.jpg"),
-                    title: Text("Anna Johnson"),
+                    leading: Container(
+                      width: 45,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/guitar/anna.jpg"),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(4)),
+                    ),
+                    title: Text(
+                      "Anna Johnson",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.purple[800]),
+                    ),
                     subtitle: Text("17 oct"),
                     trailing: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: Colors.purple[100],
+                        color: Colors.pink[50],
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 13, vertical: 3),
                         child: Text(
-                          "50,00",
-                          style: TextStyle(fontSize: 13),
+                          "50,00 \$",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ),
@@ -206,20 +267,32 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: ListTile(
-                    leading: Image.asset("assets/guitar/gtr_green.jpg"),
-                    title: Text("From SAVINGS"),
+                    leading: Container(
+                      width: 45,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/guitar/savings.jpg"),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(4)),
+                    ),
+                    title: Text(
+                      "From SAVINGS",
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
                     subtitle: Text("3 oct"),
                     trailing: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: Colors.purple[100],
+                        color: Colors.pink[50],
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 13, vertical: 3),
                         child: Text(
-                          "25,00",
-                          style: TextStyle(fontSize: 13),
+                          "25,00 \$",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w500),
                         ),
                       ),
                     ),
@@ -244,33 +317,77 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: ListTile(
-                    leading: Image.asset("assets/guitar/gtr_green.jpg"),
-                    title: Text("McDonald's"),
+                    leading: Container(
+                      width: 45,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/guitar/mc.png"),
+                              fit: BoxFit.contain),
+                          borderRadius: BorderRadius.circular(4)),
+                    ),
+                    title: Text(
+                      "McDonald's",
+                      style: TextStyle(fontWeight: FontWeight.w400),
+                    ),
                     subtitle: Text("17 oct"),
-                    trailing: Text("-12,37"),
+                    trailing: Text(
+                      "-12,37 \$",
+                      style: TextStyle(fontSize: 15),
+                    ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
             ],
           ),
         ),
       ),
       bottomNavigationBar:
-          BottomNavigationBar(backgroundColor: Colors.black, items: [
+          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_filled),
+            icon: Icon(
+              Icons.home_outlined,
+              color: Colors.black,
+            ),
+            label: ""),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.mode_comment_outlined,
+            color: Colors.grey,
+          ),
           label: "",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.comment_rounded),
+          icon: Icon(
+            Icons.notifications_none_rounded,
+            color: Colors.grey,
+          ),
           label: "",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications_none_rounded),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.pie_chart),
+          icon: Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Container(
+                width: 19,
+                height: 19,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.grey, width: 2)),
+              ),
+              Container(
+                width: 11,
+                height: 11,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 2),
+                    borderRadius:
+                        BorderRadius.only(topRight: Radius.circular(50))),
+              )
+            ],
+          ),
           label: "",
         ),
       ]),

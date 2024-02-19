@@ -65,7 +65,7 @@ class Register extends StatelessWidget {
                               },
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             TextFormField(
                               cursorColor: Colors.black,
@@ -86,7 +86,7 @@ class Register extends StatelessWidget {
                               },
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             TextFormField(
                               cursorColor: Colors.black,
@@ -107,7 +107,7 @@ class Register extends StatelessWidget {
                               },
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             TextFormField(
                               cursorColor: Colors.black,
@@ -160,7 +160,7 @@ class Register extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
