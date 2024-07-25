@@ -1,4 +1,4 @@
-# gitr
+# simple ui
 
 A new Flutter project.
 
